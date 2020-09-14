@@ -47,15 +47,22 @@
   --primario: #ffffff;
   --secundario: #000000;
   /* Tipografía */
-  --font-family-body: serif;
-  --font-family-headings: sans-serif;
+  --font-family-body: "grotesk-regular";
+  --font-family-headings: "bodoni-roman";
+  --font-family-nav: "grotesk-regular";
 }
 
 /****************************************
 *    Base
 *****************************************/
 html {
+  box-sizing: border-box;
   height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -98,10 +105,100 @@ h5 {
 /****************************************
 *    Componentes
 *****************************************/
+body {
+  background-image: url("home.png");
+  background-color: #fffdfd;
+ }
 
+.home {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px 1fr max-content;
+}
+
+.header {
+  grid-column: 4 / 6;
+  grid-row: 1 / 4;
+  align-self: center;
+  background-color: var(--secundario-4);
+}
+
+.header__titulo {
+  font-size: 90px;
+}
+
+.descripcion {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: end;
+  justify-self: center;
+}
+
+nav {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  align-self: end;
+  padding: 80px;
+}
+
+.menu__item a {
+  font-family: var(--font-family-nav);
+}
+
+.menu {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+}
+
+.menu__item a:hover {
+  color: #e8ccff;
+}
+
+footer {
+  grid-column: 3 / 6;
+  grid-row: 2 / 3;
+  align-self: end;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+footer {
+  grid-column: 2/6;
+  grid-row: 3/5;
+}
+
+footer * {
+  inline-flex;
+}
+
+footer {
+padding-right: 20px;
+}
+
+footer a:hover{
+  color: #e8ccff;  
+}
+
+.parrafo {
+  padding-top: 20px;
+}
 /****************************************
 *    Helpers
 *****************************************/
 [dots] {
   outline: rgba(255, 0, 0, 0.75) dotted 2px;
 }
+
+/****************************************
+*    Test
+*****************************************/
+/****************************************
+*    Componentes
+*****************************************/
