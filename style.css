@@ -107,6 +107,8 @@ h5 {
 *****************************************/
 body {
   background: url("./assets/homee.png");
+  background-repeat: no-repeat;
+  object-fit: cover;
 }
 
 .home {
