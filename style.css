@@ -106,9 +106,8 @@ h5 {
 *    Componentes
 *****************************************/
 body {
-  background-image: url("home.png");
-  background-color: #fffdfd;
- }
+  background: url("./assets/homee.png");
+}
 
 .home {
   display: grid;
@@ -117,7 +116,7 @@ body {
 }
 
 .header {
-  grid-column: 4 / 6;
+  grid-column: 3 / 6;
   grid-row: 1 / 4;
   align-self: center;
   background-color: var(--secundario-4);
@@ -160,7 +159,7 @@ nav {
   color: #e8ccff;
 }
 
-footer {
+.footer {
   grid-column: 3 / 6;
   grid-row: 2 / 3;
   align-self: end;
@@ -169,26 +168,32 @@ footer {
   padding: 50px 20px;
 }
 
-footer {
+.footer {
   grid-column: 2/6;
   grid-row: 3/5;
 }
 
-footer * {
-  inline-flex;
+.footer * {
+  display: inline-flex;
 }
 
-footer {
-padding-right: 20px;
+.footer {
+  padding-right: 20px;
 }
 
-footer a:hover{
-  color: #e8ccff;  
+.footer a:hover {
+  color: #e8ccff;
 }
 
-.parrafo {
-  padding-top: 20px;
+.footer__instagram {
+  margin-right: 20px;
+  margin-top: 10px;
 }
+
+.footer svg:hover {
+  fill: #e8ccff;
+}
+
 /****************************************
 *    Helpers
 *****************************************/
