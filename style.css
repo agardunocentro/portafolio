@@ -106,9 +106,8 @@ h5 {
 *    Componentes
 *****************************************/
 body {
-  background: url("./assets/homee.png");
-  background-repeat: no-repeat;
-  object-fit: cover;
+  background: url("./assets/mancha2.png"), url("./assets/mancha1.svg"),
+    url("./assets/mancha1.svg"), url("./assets/mancha1.svg");
 }
 
 .home {
@@ -126,6 +125,10 @@ body {
 
 .header__titulo {
   font-size: 90px;
+}
+
+.header__titulo span {
+  margin-left: -120px;
 }
 
 .descripcion {
