@@ -105,10 +105,10 @@ h5 {
 /****************************************
 *    Componentes
 *****************************************/
-body {
+/* body {
   background: url("./assets/mancha2.png"), url("./assets/mancha1.svg"),
     url("./assets/mancha1.svg"), url("./assets/mancha1.svg");
-}
+} */
 
 .home {
   display: grid;
@@ -124,7 +124,14 @@ body {
 }
 
 .header__titulo {
+  border: 1px solid blue;
+  position: relative;
   font-size: 90px;
+}
+
+.header__titulo::after {
+  position: absolute;
+  content: url("./assets/mancha2.png");
 }
 
 .header__titulo span {
