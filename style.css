@@ -133,18 +133,50 @@ h5 {
 }
 
 .header__titulo {
-  border: 1px solid blue;
   position: relative;
   font-size: 90px;
+  padding-left: 10px;
 }
 
-.header__titulo::after {
+.header__titulo span:first-child::after {
+  content: "";
   position: absolute;
-  content: url("./assets/mancha2.png");
+  left: 3px;
+  top: 100px;
+  width: 78px;
+  height: 21px;
+  background: url(./assets/linea-curveada-sm.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.header__titulo span {
-  margin-left: -120px;
+.header__titulo-segundo {
+  margin-left: -130px;
+}
+
+.header__titulo-segundo::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 235px;
+  width: 78px;
+  height: 21px;
+  background: url(./assets/linea-curveada-sm.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateX(-60px);
+}
+
+.header__titulo span:last-child::after {
+  content: "";
+  position: absolute;
+  left: 130px;
+  top: 370px;
+  width: 78px;
+  height: 21px;
+  background: url(./assets/linea-curveada-sm.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .descripcion {
