@@ -247,16 +247,31 @@ nav {
   fill: #e8ccff;
 }
 
-/****************************************
-*    Helpers
-*****************************************/
-[dots] {
-  outline: rgba(255, 0, 0, 0.75) dotted 2px;
+/*** Acerca de mi***/
+.layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px 1fr max-content;
 }
 
-/****************************************
-*    Test
-*****************************************/
-/****************************************
-*    Componentes
-*****************************************/
+.biografia {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  align-self: center;
+  justify-self: center;
+  /* grid-column: 3 / 6;
+  grid-row: 2 / 3;
+  align-self: end;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px; */
+}
+.yo {
+  grid-column: 3 / 6;
+  grid-row: 2 / 3;
+  align-self: center;
+  justify-self: end;
+  width: 325px;
+  height: 324px;
+}
