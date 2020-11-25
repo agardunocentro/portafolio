@@ -317,7 +317,7 @@ nav {
 }
 
 /*** Diseño***/
-
+/*
 .categoria__titulo {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
@@ -337,4 +337,36 @@ nav {
   grid-row: 3 / 4;
   align-self: end;
   padding: 80px;
+}
+*/
+/* */
+.categoria {
+  display: flex;
+}
+
+.categoria__titulo {
+  text-align: center;
+}
+
+.categoria__menu {
+}
+
+.categoria__menu ul li {
+  list-style-type: none;
+}
+
+.categoria__menu li a {
+  text-decoration: none;
+}
+
+.categoria__proyectos {
+  display: grid;
+}
+
+.categoria__proyectos section ul {
+  display: flex;
+}
+
+.categoria__proyectos ul li {
+  list-style-type: none;
 }
