@@ -47,26 +47,16 @@
   --primario: #ffffff;
   --secundario: #000000;
   /* Tipografía */
-  --font-family-body: "grotesk-regular";
-  --font-family-headings: "bodoni-roman";
-  --font-family-nav: "grotesk-regular";
+  --ff-regular: "grotesk-regular";
+  --ff-gold: "bodoni-roman";
 }
 
 /****************************************
 *    Base
 *****************************************/
-html {
-  box-sizing: border-box;
-  height: 100%;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 body {
-  font-family: var(--font-family-body);
+  height: 100%;
+  font-family: var(--ff-regular);
 }
 
 h1,
@@ -74,7 +64,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--font-family-headings);
+  font-family: var(--ff-bold);
 }
 
 h1 {
@@ -97,19 +87,18 @@ h5 {
   font-size: 19px;
 }
 
-/****************************************
-*    Temp
-*****************************************/
-/* TODO: Ejercicio aplicar estilos de figma a cajas */
+/* 1. Globalmente quitamos la linea de los enlaces */
+li a {
+  text-decoration: none; /* 1 */
+}
+
+ul li {
+  list-style-type: none;
+}
 
 /****************************************
 *    Componentes
 *****************************************/
-/* body {
-  background: url("./assets/mancha2.png"), url("./assets/mancha1.svg"),
-    url("./assets/mancha1.svg"), url("./assets/mancha1.svg");
-} */
-
 .home {
   position: relative;
   display: grid;
@@ -185,7 +174,7 @@ h5 {
   justify-self: center;
 }
 
-nav {
+.nav {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
   align-self: end;
@@ -259,14 +248,16 @@ nav {
 }
 
 /*** Acerca de mi***/
-.layout.acercade {
+/* 2. Justify-self end & translateX para alinearlo */
+
+.acercade {
   position: relative;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 100px 1fr max-content;
 }
 
-.layout.acercade {
+.acercade {
   position: relative;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -278,13 +269,8 @@ nav {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   align-self: center;
-  justify-self: center;
-  /* grid-column: 3 / 6;
-  grid-row: 2 / 3;
-  align-self: end;
-  display: flex;
-  justify-content: center;
-  padding: 50px 20px; */
+  justify-self: end; /* 2 */
+  transform: translateX(-1.2rem); /* 2 */
 }
 
 .biografia::after {
@@ -295,7 +281,7 @@ nav {
   z-index: -1;
 }
 
-.layout.acercade figure {
+.acercade figure {
   position: relative;
   grid-column: 3 / 6;
   grid-row: 2 / 3;
@@ -303,12 +289,7 @@ nav {
   justify-self: end;
 }
 
-.yo {
-  width: 325px;
-  height: 324px;
-}
-
-.layout.acercade figure::after {
+.acercade figure::after {
   position: absolute;
   content: url(https://res.cloudinary.com/dkixdpdpk/image/upload/v1603749810/Copia_de_acercademi_tqie7p.png);
   transform: scale(0.7);
@@ -316,49 +297,38 @@ nav {
   right: 0;
 }
 
+.yo {
+  width: 325px;
+  height: 324px;
+}
+
 /*** Diseño***/
-/*
-.categoria__titulo {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  align-self: end;
-  justify-self: center;
-}
+/* 3. flex 1 & flex 5 para simular 6 columnas */
+/* 4. padding-top para separar el titulo del menu */
 
-.categoria__menu {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  align-self: end;
-  justify-self: center;
-}
-
-nav {
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-  align-self: end;
-  padding: 80px;
-}
-*/
-/* */
 .categoria {
   display: flex;
+}
+
+.categoria__nav {
+  padding: 2rem;
+  flex: 1; /* 3 */
+}
+
+.categoria__nav ul {
+  padding-top: 4rem; /* 4 */
+}
+
+.categoria__proyectos {
+  flex: 5; /* 3 */
 }
 
 .categoria__titulo {
   text-align: center;
 }
 
-.categoria__menu {
-}
-
-.categoria__menu ul li {
-  list-style-type: none;
-}
-
-.categoria__menu li a {
-  text-decoration: none;
-}
-
+/* .categoria__menu {
+} */
 .categoria__proyectos {
   display: grid;
 }
@@ -367,6 +337,5 @@ nav {
   display: flex;
 }
 
-.categoria__proyectos ul li {
-  list-style-type: none;
-}
+/* TODO */
+/* Dar formato a c/u de las categorias */
