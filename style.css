@@ -331,7 +331,37 @@ ul li {
 .categoria__proyectos section ul {
   display: flex;
   gap: 20px;
+  max-width: 80%;
+}
+
+.categoria__proyectos section > * {
+  margin: 8rem auto;
 }
 
 /* TODO */
 /* Dar formato a c/u de las categorias */
+
+.categoria__proyectos #editorial ul {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  place-items: center;
+  gap: 20px;
+  /* max-width: 80%;
+  margin: auto; */
+  margin-top: 2rem;
+}
+
+/* .categoria__proyectos ul li img {
+  border-radius: 20px;
+} */
+
+.categoria__proyectos #editorial ul li:nth-child(4) img {
+  max-width: 300px;
+  border-radius: 20px;
+}
+
+.categoria__proyectos #editorial ul li:nth-child(2) img {
+  max-width: 450px;
+  /* padding-right: 40px; */
+}
