@@ -102,76 +102,65 @@ ul li {
 .home {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 100px 1fr max-content;
-}
-
-.home::after {
-  position: absolute;
-  content: url(./assets/linea-curveada.png);
-  right: -30px;
-  top: -40px;
 }
 
 .header {
-  grid-column: 3 / 6;
-  grid-row: 1 / 4;
   align-self: center;
-  background-color: var(--secundario-4);
+  justify-self: center;
 }
 
 .header__titulo {
   position: relative;
-  font-size: 90px;
-  padding-left: 10px;
+  font-size: 45px;
+  padding-left: 5px;
+  transform: translate(2rem, 6rem);
 }
 
 .header__titulo span:first-child::after {
   content: "";
   position: absolute;
-  left: 3px;
-  top: 100px;
-  width: 78px;
-  height: 21px;
+  left: 1.5px;
+  top: 50px;
+  width: 39px;
+  height: 10.5px;
   background: url(./assets/linea-curveada-sm.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .header__titulo-segundo {
-  margin-left: -130px;
+  margin-left: -65px;
 }
 
 .header__titulo-segundo::after {
   content: "";
   position: absolute;
-  left: 3px;
-  top: 235px;
-  width: 78px;
-  height: 21px;
+  left: 1.5px;
+  top: 117.5px;
+  width: 39px;
+  height: 10.5px;
   background: url(./assets/linea-curveada-sm.png);
   background-repeat: no-repeat;
   background-size: contain;
-  transform: translateX(-60px);
+  transform: translateX(-30px);
 }
 
 .header__titulo span:last-child::after {
   content: "";
   position: absolute;
-  left: 130px;
-  top: 370px;
-  width: 78px;
-  height: 21px;
+  left: 65px;
+  top: 185px;
+  width: 39px;
+  height: 10.5px;
   background: url(./assets/linea-curveada-sm.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.descripcion {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  align-self: end;
-  justify-self: center;
+.home .descripcion {
+  position: absolute;
+  top: 60px;
+  left: 40px;
 }
 
 .nav {
@@ -179,6 +168,11 @@ ul li {
   grid-row: 3 / 4;
   align-self: end;
   padding: 80px;
+}
+
+.home .nav {
+  margin-right: auto;
+  padding: 20px;
 }
 
 .menu__item a {
@@ -201,25 +195,14 @@ ul li {
 }
 
 .footer {
-  grid-column: 3 / 6;
-  grid-row: 2 / 3;
-  align-self: end;
+  align-self: center;
   display: flex;
   justify-content: center;
   padding: 50px 20px;
 }
 
-.footer {
-  grid-column: 2/6;
-  grid-row: 3/5;
-}
-
 .footer * {
   display: inline-flex;
-}
-
-.footer {
-  padding-right: 20px;
 }
 
 .footer a:hover {
@@ -247,59 +230,191 @@ ul li {
   z-index: -1;
 }
 
-/*** Acerca de mi***/
-/* 2. Justify-self end & translateX para alinearlo */
-
-.acercade {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 100px 1fr max-content;
+@media screen and (min-width: 40em) {
+  .home {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px 1fr max-content;
+  }
+  .home::after {
+    position: absolute;
+    content: url(./assets/linea-curveada.png);
+    right: -30px;
+    top: -40px;
+  }
+  .header {
+    justify-self: unset;
+    grid-column: 3 / 6;
+    grid-row: 1 / 4;
+  }
+  .header__titulo {
+    position: relative;
+    font-size: 90px;
+    padding-left: 10px;
+    transform: none;
+  }
+  .header__titulo span:first-child::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 100px;
+    width: 78px;
+    height: 21px;
+    background: url(./assets/linea-curveada-sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .header__titulo-segundo {
+    margin-left: -130px;
+  }
+  .header__titulo-segundo::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 235px;
+    width: 78px;
+    height: 21px;
+    background: url(./assets/linea-curveada-sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateX(-60px);
+  }
+  .header__titulo span:last-child::after {
+    content: "";
+    position: absolute;
+    left: 130px;
+    top: 370px;
+    width: 78px;
+    height: 21px;
+    background: url(./assets/linea-curveada-sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .home .descripcion {
+    position: static;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: end;
+    justify-self: center;
+  }
+  .home .nav {
+    margin: unset;
+    padding: 80px;
+  }
+  .home .menu {
+    display: block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  .footer {
+    grid-column: 2/6;
+    grid-row: 3/5;
+    align-self: end;
+  }
 }
 
+/*** Acerca de mi***/
+/* 2. Justify-self end & translateX para alinearlo */
+/* Esto es instrucciones para móvil */
 .acercade {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 100px 1fr max-content;
+  grid-template-rows: 100px auto 1fr min-content;
+}
+
+.acercade .descripcion {
+  grid-row: 1 / 2;
+  padding: 2rem;
+  min-width: max-content;
 }
 
 .biografia {
+  grid-row: 3 / 4;
   position: relative;
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  align-self: center;
-  justify-self: end; /* 2 */
-  transform: translateX(-1.2rem); /* 2 */
+  margin: auto;
 }
 
 .biografia::after {
   content: url(./assets/linea-doble.png);
   position: absolute;
   top: -20px;
-  left: -20px;
+  left: -40px;
   z-index: -1;
 }
 
 .acercade figure {
-  position: relative;
-  grid-column: 3 / 6;
   grid-row: 2 / 3;
-  align-self: center;
-  justify-self: end;
+  position: relative;
+  margin: auto;
 }
 
 .acercade figure::after {
   position: absolute;
   content: url(https://res.cloudinary.com/dkixdpdpk/image/upload/v1603749810/Copia_de_acercademi_tqie7p.png);
-  transform: scale(0.7);
+  transform: scale(0.6);
   top: 10px;
-  right: 0;
+  left: 100px;
 }
 
 .yo {
-  width: 325px;
-  height: 324px;
+  max-width: 325px;
+}
+
+.acercade .nav {
+  grid-row: 4 / 5;
+  padding: 20px;
+}
+
+@media screen and (min-width: 40em) {
+  /* Estas instrucciones son para desktop */
+  .acercade {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px 1fr max-content;
+  }
+  .acercade .descripcion {
+    align-self: end;
+    justify-self: center;
+    padding: 0;
+  }
+  .biografia {
+    position: relative;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    align-self: center;
+    justify-self: end; /* 2 */
+    margin-left: 5vw;
+    min-width: max-content;
+  }
+  .biografia::after {
+    content: url(./assets/linea-doble.png);
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    z-index: -1;
+  }
+  .acercade figure {
+    position: relative;
+    grid-column: 3 / 6;
+    grid-row: 2 / 3;
+    align-self: center;
+    justify-self: end;
+  }
+  .acercade figure::after {
+    position: absolute;
+    content: url(https://res.cloudinary.com/dkixdpdpk/image/upload/v1603749810/Copia_de_acercademi_tqie7p.png);
+    transform: scale(0.7);
+    top: 10px;
+    right: 0;
+    left: unset;
+  }
+  .yo {
+    width: 325px;
+    height: 324px;
+  }
+  .acercade .nav {
+    padding: 80px;
+  }
 }
 
 /*** Diseño***/
@@ -387,4 +502,15 @@ ul li {
   text-decoration: none;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+}
+
+@media screen and (min-width: 40em) {
+  .categoria .backbutton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
 }
