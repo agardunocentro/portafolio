@@ -307,16 +307,31 @@ ul li {
 /* 4. padding-top para separar el titulo del menu */
 
 .categoria {
+  position: relative;
   display: flex;
 }
 
 .categoria__nav {
   padding-top: 2rem;
   flex: 1; /* 3 */
+  height: 3000px;
 }
 
-.categoria__nav ul {
-  padding-top: 4rem;
+.categoria__nav div {
+  position: sticky;
+  top: -1px;
+  padding: 1rem 2rem;
+}
+
+/* .categoria__nav div.pinned ul li {
+  border: 1px solid black;
+} */
+
+.categoria__menu ul {
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  padding-top: 1rem;
 }
 
 .categoria__proyectos {
@@ -324,9 +339,8 @@ ul li {
   display: grid;
 }
 
-.categoria__titulo {
-  text-align: center;
-}
+/* .categoria__titulo {
+} */
 
 .categoria__proyectos section ul {
   display: flex;
@@ -364,4 +378,13 @@ ul li {
 .categoria__proyectos #editorial ul li:nth-child(2) img {
   max-width: 450px;
   /* padding-right: 40px; */
+}
+
+.categoria .backbutton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
